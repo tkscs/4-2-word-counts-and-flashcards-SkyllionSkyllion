@@ -18,12 +18,13 @@ def pad_word_count(essay):
     # Initialize new essay to match the original.
     # We will update it and re-assign this variable later.
     new_essay = essay
-
+    replacey = {"n't":" not", "'s": " is", "'re":" are", "'ve": " have"}
     #### START REPLACING CODE HERE
-    new_essay = new_essay.replace("n't", " not")
-    new_essay = new_essay.replace("'s'", " is")
-    new_essay = new_essay.replace("'re'", " are")
-    new_essay = new_essay.replace("'ve'", " have")
+
+
+
+    for keys, values in replacey.items():
+      new_essay = new_essay.replace(keys, values)
     #### STOP REPLACING CODE HERE
 
     return new_essay
