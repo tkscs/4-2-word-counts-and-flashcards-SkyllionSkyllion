@@ -29,14 +29,30 @@ change in their communities and beyond.
 
 # 1. Remove all new lines and punctuation, and convert to all lowercase.
 #### YOUR CODE HERE
-
+newtext = text
+newtext = newtext.replace(".", "")
+newtext = newtext.replace(",", "")
+newtext = newtext.replace("-", " ")
+newtext = newtext.replace("\n"," ")
+while "  " in newtext:
+    newtext = newtext.replace("  ", " ")
+newtext = newtext.lower()
+print(newtext)
 # 2. Use the `.split()` method to split into a list of words.
 #### YOUR CODE HERE
-
+textlist = []
+textlist = newtext.split()
+print(textlist)
 # 3. Initialize an empty dictionary to keep track of word counts.
 #### YOUR CODE HERE
-
+textdict = {}
 # 4. loop through the list of words and update the dictionary. If the word is
 # already a key in the dicitonary, increment the count. If not, add the new key
 # with a count of 1.
+for word in textlist:
+    if word not in textdict:
+        textdict[word] = 1
+    else:
+        textdict[word] += 1
+print (textdict)
 #### YOUR CODE HERE
